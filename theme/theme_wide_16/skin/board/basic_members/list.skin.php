@@ -126,7 +126,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 				else if ($wr_id == $list[$i]['wr_id'])
 					echo "<span class=\"bo_current\">열람중</span>";
 				else
-					echo $i+1;
+					echo (($page-1) * $board['bo_page_rows']) + $i + 1;
 				 ?>
 				</td>
 				<td class="board_title" style="padding-left:<?php echo $list[$i]['reply'] ? (strlen($list[$i]['wr_reply'])*10) : '0'; ?>px">&nbsp;&nbsp;
