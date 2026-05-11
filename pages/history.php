@@ -57,101 +57,115 @@ include_once(G5_THEME_PATH.'/head.php');
 	<div class="container margin-top-80">
 		<h2 class="h2_title">연혁</h2>
 		<div class="history_wrap margin-top-50">
-			<div class="history_in">
+		<div class="history_in">
 			<div class="history_list">
-				<h2>2023</h2>
-				<ol>
-					<li><strong>12월</strong>미래산업대응 「전라남도 뿌리산업 혁신포럼」 개최</li>
-					<li><strong>8월</strong>미래산업대응 「전라남도 뿌리산업 혁신포럼」 개최</li>
-					<li><strong>7월</strong>중소기업 협동화 사업 선정 및 수행(6개 기업 참여)</li>
-					<li><strong>6월</strong>순천대학교 협회 업무협약 체결</li>	
-					<li><strong>5월</strong>전남 뿌리기업 역량강화 제주워크숍 개최</li>	
-					<li><strong>4월</strong>「중진공 협회」 탄소중립 성과보고회 및 간담회	</li>
-					<li><strong>3월</strong>(사)전남뿌리기업협회, 전남테크노파크, <br>
-					<p>한국생산기술연구 원본원 업무협약 예정</p>
-					<p>- (사)전남뿌리기업협회 산하기관</p>
-					<p>- 광양익신산단협의회 설립</p>
-					<p>- 비영리법인 사단법인전남뿌리기업협회 설립등기완료</p>
-					<p>(전라남도 인가)</p></li>	
-				</ol>
+			<h2>2025</h2>
+			<ol>
+				<li><strong>01월</strong>순천시청 미래산업국 국장 간담회</li>
+				<li><strong>02월</strong>김문수 국회의원 초청 간담회</li>
+				<li><strong>03월</strong>2025년 정기총회 개최</li>
+				<li><strong>04월</strong>「전남기업분석 및 강소지역기업발굴」 용역 수행</li>
+				<li><strong>05월</strong>이호재 회장 순천대 개교90주년 발전기금 전달<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;제주워크숍 개최</li>
+				<li><strong>06월</strong>중진공 협동화지원사업 추진 (5개 기업)</li>
+				<li><strong>07월</strong>전남기계부품가공산업 간담회 · 순천시청 신성장산업팀 간담회</li>
+				<li><strong>12월</strong>전라남도 뿌리산업 혁신포럼 개최</li>
+				<li><strong>연중</strong>정기 이사회 · 공동구매 사업 운영</li>
+			</ol>
 			</div>
-			<div class="history_blank">
-			</div>
-			</div>
-			<div class="history_in">
+			<div class="history_blank"></div>
+		</div>
+
+		<div class="history_in">
 			<div class="history_list">
-				<h2>2022</h2>
-				<ol>
-					<li><strong>9월</strong>조합 산하기관인 전남뿌리기업협의회와 분리<br>
-					-뿌리기업 역량강화 워크숍 개최	<br>
-					-선진기업 벤치마킹 - 익산패션산업시험연구원	</li>
-					<li><strong>8월</strong>「중진공 조합」 탄소중립 및 ESG 경영 선언식	</li>
-					<li><strong>7월</strong>뿌리기업 역량강화 워크숍 개최	</li>
-					<li><strong>4월</strong>「중진공 협회」 탄소중립 성과보고회 및 간담회	</li>
-					<li><strong>4월~12월</strong>2022 뿌리산업특화단지 지원사업 선정</li>
-					<li><strong></strong>- 전남뿌리기업협의회</li>
-				</ol>
+			<h2>2024</h2>
+			<ol>
+				<li><strong>03월</strong>2024년 정기총회 개최</li>
+				<li><strong>04월</strong>전남기계부품산업 간담회 (주관: 전남테크노파크)</li>
+				<li><strong>05월</strong>제주워크숍 개최</li>
+				<li><strong>06월</strong>중진공 협동화지원사업 추진 (5개 기업)</li>
+				<li><strong>07월</strong>「뿌리산업도기업육성사업」 선정 (전남테크노파크)</li>
+				<li><strong>08월</strong>순천대 글로컬대학 발전기금 전달 (회원사 11억)</li>
+				<li><strong>10월</strong>전남조선해양기자재협동조합 업무협약 · 순천대 인재양성 기금 전달</li>
+				<li><strong>12월</strong>권향엽 국회의원 초청 간담회 · 뿌리산업 혁신포럼 개최</li>
+				<li><strong>연중</strong>정기 이사회 · 공동구매 사업 운영</li>
+			</ol>
 			</div>
-			<div class="history_blank">
-			</div>
-			</div>
-			<div class="history_in">
+			<div class="history_blank"></div>
+		</div>
+
+		<div class="history_in">
 			<div class="history_list">
-				<h2>2021</h2>
-				<ol>
-					<li><strong>12월</strong>전남뿌리기업협동조합 / 전남뿌리기업협의회 2021년 송년회		</li>
-					<li><strong>11월</strong>선진기업 벤치마킹 - (사)한국금형산업진흥회	</li>
-					<li><strong>10월</strong>MOU체결 – 순천대 산학협력단	</li>
-					<li><strong>9월</strong>뿌리기업 역량강화 제주도 워크숍 개최	</li>
-					<li><strong>8월</strong>전남뿌리기업협의회 화상회의실 구축	</li>
-					<li><strong>7월</strong>중소기업 협동화사업 선정, 수행(6개 기업참여)
-											<p>-전남뿌리기업협의회 발대식</p></li>
-					<li><strong>6월</strong>2021 뿌리산업특화단지 지원사업 선정, 사업추진</li>
-					<li><strong>5월</strong>순천대 첨단부품·소재 지역혁신플랫폼 사업단 협약</li>
-					<li><strong>6월~12월</strong>뿌리산업특화단지 혁신활동지원사업 선정</li>
-					<li><strong></strong>- 전남뿌리기업협의회</li>
-					<li><strong>3월</strong>전남뿌리기업협의회 설립</li>
-				</ol>
+			<h2>2023</h2>
+			<ol>
+				<li><strong>02월</strong>사단법인 전남뿌리기업협회 전라남도 허가</li>
+				<li><strong>03월</strong>(사)전남뿌리기업협회 설립 · 이호재 회장 취임</li>
+				<li><strong>05월</strong>제주워크숍 개최</li>
+				<li><strong>06월</strong>탄소중립·ESG경영 동참선언문 (주관: 중진공 이사장)</li>
+				<li><strong>07월</strong>중진공 협동화지원사업 추진 (6개 기업)</li>
+				<li><strong>09월</strong>국립순천대 글로컬대학30주년 업무협약</li>
+				<li><strong>12월</strong>전라남도 뿌리산업혁신포럼 개최</li>
+				<li><strong>연중</strong>정기 이사회 · 공동구매 사업 운영</li>
+			</ol>
 			</div>
-			<div class="history_blank">
-			</div>
-			</div>
-			<div class="history_in">
+			<div class="history_blank"></div>
+		</div>
+
+		<div class="history_in">
 			<div class="history_list">
-				<h2>2020</h2>
-				<ol>
-				<li><strong>6월</strong>「전남뿌리기업 실태조사」 사업추진, 수행<br>
-				- 「전남뿌리산업진흥 및 육성을 위한 종합계획수립」에 참여기관 선정</li>
-				<li><strong>5월</strong>2020 「과학기술인 협동조합지원사업」 참여기관 선정, 수행	</li>
-				<li><strong>3월</strong>이호재 2대 이사장 취임	</li>
-				</ol>
+			<h2>2022</h2>
+			<ol>
+				<li><strong>03월</strong>(사)패션산업시험연구소 업무협약</li>
+				<li><strong>07월</strong>중진공 협동화지원사업 추진 (4개 기업)</li>
+			</ol>
 			</div>
-			<div class="history_blank">
-			</div>
-			</div>
-			<div class="history_in">
+			<div class="history_blank"></div>
+		</div>
+
+		<div class="history_in">
 			<div class="history_list">
-				<h2>2019</h2>
-				<ol>
-					<li class="history_array"><strong>9월</strong>전남뿌리산업 사업화 지원 1차 선정 </li>
-					<li class="history_array"><strong></strong>: 팜플랫 및 홈페이지 제작</li>
-					<li><strong></strong>국제뿌리산업 전시회 참가 3개 기업 참여	</li>
-					<li><strong>3월</strong>뿌리기업 역량강화 워크숍 개최</li>
-				</ol>
+			<h2>2021</h2>
+			<ol>
+				<li><strong>07월</strong>중진공 협동화지원사업 추진 (5개 기업)</li>
+				<li><strong>연중</strong>정기 이사회 · 공동구매 사업 운영</li>
+			</ol>
 			</div>
-			<div class="history_blank">
-			</div>
-			</div>
-			<div class="history_in">
+			<div class="history_blank"></div>
+		</div>
+
+		<div class="history_in">
 			<div class="history_list">
-				<h2>2017</h2>
-				<ol>
-					<li><strong>9월</strong>전남뿌리기업협동조합 설립</li>
-				</ol>
+			<h2>2020</h2>
+			<ol>
+				<li><strong>03월</strong>이호재 이사장 취임</li>
+				<li><strong>05월</strong>과학기술인협동조합지원사업 참여</li>
+				<li><strong>06월</strong>전남뿌리산업진흥 종합계획수립 참여 · 뿌리기업 실태조사 수행</li>
+				<li><strong>연중</strong>공동구매 사업 운영</li>
+			</ol>
 			</div>
-			<div class="history_blank">
+			<div class="history_blank"></div>
+		</div>
+
+		<div class="history_in">
+			<div class="history_list">
+			<h2>2019</h2>
+			<ol>
+				<li><strong>03월</strong>뿌리기업 역량강화 워크숍 개최</li>
+				<li><strong>09월</strong>국제뿌리산업전시회 참가 (3개 기업)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;뿌리산업 사업화지원 1차 선정</li>
+			</ol>
 			</div>
+			<div class="history_blank"></div>
+		</div>
+
+		<div class="history_in">
+			<div class="history_list">
+			<h2>2017</h2>
+			<ol>
+				<li><strong>03월</strong>전남뿌리기업협동조합 설립</li>
+			</ol>
 			</div>
+			<div class="history_blank"></div>
+		</div>
+		</div>
 		</div>
 	</div>
 
@@ -160,6 +174,3 @@ include_once(G5_THEME_PATH.'/head.php');
 <?php
 include_once(G5_THEME_PATH.'/tail.php');
 ?>
-
-
-
