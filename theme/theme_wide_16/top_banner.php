@@ -42,6 +42,11 @@ if($bo_table == 'officers'){
     $title = "임원현황";
 }
 
+if($bo_table == 'advisors'){
+    $background_images = G5_URL.'/pages/images/sub/visual_sub.png';
+    $title = "고문단 및 자문위원회";
+}
+
 ?>
 
 <!-------------------------- 상단배경 수정 -------------------------->
