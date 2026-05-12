@@ -24,8 +24,20 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 }
 </style>
 
+<div class="container margin-top-80">
+<div class="tab_group">
+<nav class="tab">
+<ul>
+<li><button onclick="location.href='/pages/organization.php'">조직구성</button></li>
+<li><button onclick="location.href='/bbs/board.php?bo_table=officers'">임원현황</button></li>
+<li class="on"><button>고문단 및 자문위원회</button></li>
+</ul>
+</nav>
+</div>
+</div>
+
 <!-- 게시판 목록 시작 { -->
-<div id="bo_list" class="container margin-top-40" style="width:<?php echo $width; ?>">
+<div id="bo_list" class="container" style="width:<?php echo $width; ?>">
 <div id="bo_btn_top" class="search_wrap">
 <div id="bo_list_total">
 <span>Total <?php echo number_format($total_count) ?>건</span>

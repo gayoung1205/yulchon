@@ -36,17 +36,6 @@ if($bo_table == 'qa'){
 	$background_images = $board_qa;
 }
 
-// officers 게시판
-if($bo_table == 'officers'){
-    $background_images = G5_URL.'/pages/images/sub/visual_sub.png';
-    $title = "임원현황";
-}
-
-if($bo_table == 'advisors'){
-    $background_images = G5_URL.'/pages/images/sub/visual_sub.png';
-    $title = "고문단 및 자문위원회";
-}
-
 ?>
 
 <!-------------------------- 상단배경 수정 -------------------------->
