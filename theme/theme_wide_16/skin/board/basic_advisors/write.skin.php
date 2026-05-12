@@ -12,6 +12,25 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 }
 </style>
 
+<div class="position-relative overflow-hidden p-md-5 text-center bg-dark bg-sub-1 ety-mt-main about-bg">
+<div class="col-md-5 mx-auto">
+<h1 class="display-4 font-weight-normal h1_subTitle">협회소개</h1>
+</div>
+<div class="lnb_wrap">
+<ul class="lnb_ul">
+<li><a href="/pages/about.php">인사말</a></li>
+<li><a href="/pages/vision.php">비전&목표</a></li>
+<li><a href="/pages/history.php">연혁</a></li>
+<li><a href="/pages/organization.php" class="on">조직구성 및 임원현황</a></li>
+<li><a href="/pages/certificate.php">인증서</a></li>
+</ul>
+</div>
+</div>
+
+<div class="home">
+<a href="/"><i class="fas fa-home"></i></a> > 협회소개 > 조직구성 및 임원현황
+</div>
+
 <section id="bo_w" class="container margin-top-40">
 <h2 class="sound_only"><?php echo $g5['title'] ?></h2>
 
@@ -29,6 +48,15 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 <input type="hidden" name="page" value="<?php echo $page ?>">
 
 <?php echo $option_hidden ?? ''; ?>
+
+<div class="bo_w_tit write_div">
+    <label for="ca_name">구분 <strong>필수</strong></label>
+    <select name="ca_name" id="ca_name" required class="frm_input" style="height:40px; width:100%;">
+        <option value="">-- 구분 선택 --</option>
+        <option value="고문단" <?php echo (isset($ca_name) && $ca_name == '고문단') ? 'selected' : ''; ?>>고문단</option>
+        <option value="자문단" <?php echo (isset($ca_name) && $ca_name == '자문단') ? 'selected' : ''; ?>>자문단</option>
+    </select>
+</div>
 
 <div class="bo_w_tit write_div">
 <label for="wr_subject">소속 <strong>필수</strong></label>

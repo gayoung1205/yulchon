@@ -15,16 +15,28 @@ if (!empty($list)) {
 
 add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0);
 ?>
-<style>
-@media only screen and (max-width: 320px) {
-.SF_board{ overflow-x: auto;white-space: nowrap; }
-}
-@media only screen and (min-width: 321px) and (max-width: 768px){
-.SF_board{ overflow-x: auto;white-space: nowrap; }
-}
-</style>
+
+<div class="position-relative overflow-hidden p-md-5 text-center bg-dark bg-sub-1 ety-mt-main about-bg">
+<div class="col-md-5 mx-auto">
+<h1 class="display-4 font-weight-normal h1_subTitle">협회소개</h1>
+</div>
+<div class="lnb_wrap">
+<ul class="lnb_ul">
+<li><a href="/pages/about.php">인사말</a></li>
+<li><a href="/pages/vision.php">비전&목표</a></li>
+<li><a href="/pages/history.php">연혁</a></li>
+<li><a href="/pages/organization.php" class="on">조직구성 및 임원현황</a></li>
+<li><a href="/pages/certificate.php">인증서</a></li>
+</ul>
+</div>
+</div>
+
+<div class="home">
+<a href="/"><i class="fas fa-home"></i></a> > 협회소개 > 조직구성 및 임원현황
+</div>
 
 <div class="container margin-top-80">
+<h2 class="h2_title">조직구성 및 임원현황</h2>
 <div class="tab_group">
 <nav class="tab">
 <ul>
@@ -35,6 +47,15 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 </nav>
 </div>
 </div>
+
+<style>
+@media only screen and (max-width: 320px) {
+.SF_board{ overflow-x: auto;white-space: nowrap; }
+}
+@media only screen and (min-width: 321px) and (max-width: 768px){
+.SF_board{ overflow-x: auto;white-space: nowrap; }
+}
+</style>
 
 <!-- 게시판 목록 시작 { -->
 <div id="bo_list" class="container" style="width:<?php echo $width; ?>">
@@ -98,7 +119,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 <input type="checkbox" id="chkall" onclick="if (this.checked) all_checked(true); else all_checked(false);">
 </th>
 <?php } ?>
-<th class="text-center board_num">번호</th>
+<th class="text-center">구분</th>
 <th class="text-center">분야</th>
 <th class="text-center">성명</th>
 <th class="text-center board_title">소속</th>
@@ -116,15 +137,8 @@ $not = " style='background:#f7fbff;'";
 <input type="checkbox" name="chk_wr_id[]" value="<?php echo $list[$i]['wr_id'] ?>" id="chk_wr_id_<?php echo $i ?>">
 </td>
 <?php } ?>
-<td class="text-center board_num">
-<?php
-if ($list[$i]['is_notice'])
-    echo '<strong><i class="fas fa-exclamation-triangle"></i><span class="sound_only">공지</span></strong>';
-else if ($wr_id == $list[$i]['wr_id'])
-    echo "<span class=\"bo_current\">열람중</span>";
-else
-    echo ($page - 1) * $page_rows + $i + 1;
-?>
+<td class="text-center">
+<?php echo $list[$i]['ca_name']; ?>
 </td>
 <td class="text-center"><?php echo $list[$i]['wr_1'] ?></td>
 <td class="text-center"><?php echo $list[$i]['wr_2'] ?></td>
