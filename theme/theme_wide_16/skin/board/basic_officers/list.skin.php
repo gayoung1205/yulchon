@@ -161,7 +161,6 @@ if ($list[$i]['is_notice'])
 else if ($wr_id == $list[$i]['wr_id'])
     echo "<span class=\"bo_current\">열람중</span>";
 else
-    // ★★★ 핵심 수정: 페이지네이션 고려한 순번 (1페이지 1번부터 순서대로)
     echo ($page - 1) * $page_rows + $i + 1;
 ?>
 </td>

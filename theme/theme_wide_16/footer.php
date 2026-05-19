@@ -1,33 +1,53 @@
-	<footer class="py-5 bg-dark margin-top-80">
-		<div class="container footer footer_wrap">
-			<img src="/pages/images/common/logo_footer.png" alt="">
-			<address class="address">
-				<ul>
-					<li>전라남도 순천시 해룡면 율촌산단1로 50 전남테크노파크 금속소재융복합센터 211호</li>
-					<li><span>Tel : 061-723-8281</span><span>Fax : 061-723-8281</span><span><a href="mailto:jnbburi@naver.com" class="color-white">Email : jnbburi@naver.com</a></span></li>
-					<li>© 2024  (사)전남뿌리기업협회  All rights reserved.
-						<div class="login_btn">
-							<?php if($is_admin) {?>
-							<a href="/bbs/logout.php">logout</a>
-							<?php } else{?>
-								<a href="/bbs/login.php">login</a>
-							<?php }?>
-						</div>
-					</li>
-				</ul>
-			</address>
-			<!-- 바로가기 -->
-			<div class="select">
-				<a href="" title="패밀리 사이트">주요기관</a>
-				<ul>
-					<li><a href="https://www.jeonnam.go.kr/" target="_blank" title="">- 전라남도</a></li>
-					<li><a href="https://www.acrc.go.kr/" target="_blank" title="">- 국민권익위원회</a></li>
-					<li><a href="https://www.nts.go.kr/" target="_blank" title="">- 국세청</a></li>
-					<li><a href="http://www.jntp.or.kr/" target="_blank" title="">- 전남테크노파크</a></li>
-					<li><a href="https://www.kpic.re.kr/" target="_blank" title="">- 국가뿌리산업진흥센터</a></li>
-					<li><a href="https://www.kosmes.or.kr/" target="_blank" title="">- 중소벤처기업진흥공단</a></li>
-				</ul>
-			</div>
-		</div><!--/container-->
-    </footer>
-	<!-- /container -->
+<footer class="main-footer">
+    <div class="footer-container">
+        
+        <!-- 상단: 로고 + 정보 + 빠른링크 -->
+        <div class="footer-top">
+            
+            <!-- 좌측: 협의회 정보 -->
+            <div class="footer-info">
+                <div class="footer-title">
+                    <span class="eng">YULCHON · HAERYONG</span>
+                    <h3>(사)율촌·해룡산단협의회</h3>
+                </div>
+                
+                <address class="footer-address">
+                    <p class="addr">전라남도 순천시 해룡면 ○○○</p>
+                    <ul class="contact-info">
+                        <li><span class="label">TEL</span> 061-XXX-XXXX</li>
+                        <li><span class="label">FAX</span> 061-XXX-XXXX</li>
+                        <li><span class="label">EMAIL</span> <a href="mailto:info@yulchon.kr">info@yulchon.kr</a></li>
+                    </ul>
+                </address>
+            </div>
+            
+            <!-- 우측: 빠른 링크 -->
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>협의회</h4>
+                    <ul>
+                        <li><a href="/pages/about.php">인사말</a></li>
+                        <li><a href="/pages/organization.php">조직도</a></li>
+                    </ul>
+                </div>
+                
+                <div class="link-group">
+                    <h4>주요기관</h4>
+                    <ul>
+                        <li><a href="https://www.jeonnam.go.kr/" target="_blank">전라남도</a></li>
+                        <li><a href="http://www.jntp.or.kr/" target="_blank">전남테크노파크</a></li>
+                        <li><a href="https://www.gfez.go.kr/" target="_blank">광양만권경제자유구역</a></li>
+                        <li><a href="https://www.suncheon.go.kr/" target="_blank">순천시</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- 하단: 카피라이트 -->
+        <div class="footer-bottom">
+            <p class="copyright">© 2026 (사)율촌·해룡산단협의회. All rights reserved.</p>
+        </div>
+        
+    </div>
+</footer>

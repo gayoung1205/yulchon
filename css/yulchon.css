@@ -1,0 +1,1270 @@
+@charset "utf-8";
+
+/* ========================================
+   율촌·해룡산단협의회 - 통합 커스텀 스타일
+   작성일: 2026.05.18
+   ======================================== */
+
+
+/* ============================================
+   [1] 컬러 변수 정의 (한 곳에서 관리)
+   ============================================ */
+:root {
+    /* 메인 컬러 */
+    --primary: #003B6F;        /* 딥블루 */
+    --primary-light: #1E5A8E;
+    --accent: #00A86B;         /* 그린 액센트 */
+    --accent-light: #4FC18C;
+    
+    /* 텍스트 */
+    --text-dark: #1a1a1a;
+    --text-body: #444;
+    --text-mute: #888;
+    
+    /* 배경 */
+    --bg-light: #f5f9fc;
+    --bg-section: #fafbfc;
+    --border-light: #e1e8ed;
+}
+
+/* ============================================
+   메인 페이지 (index.php) - radius 제거 버전
+   ============================================ */
+
+/* ---------- [1] 메인 히어로 (배경 이미지) ---------- */
+.main-hero {
+    position: relative;
+    color: #fff;
+    padding: 160px 20px 140px;
+    overflow: hidden;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+/* 배경 이미지 */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 어두운 오버레이 (텍스트 가독성) */
+.hero-overlay {
+    background: linear-gradient(135deg, 
+                rgba(0, 0, 0, 0.5) 0%, 
+                rgba(0, 0, 0, 0.3) 100%);
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+.hero-inner {
+    max-width: 700px;
+}
+.hero-eng {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #4FC18C;
+    margin: 0 0 20px;
+    font-weight: 600;
+}
+.hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 24px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.hero-title span {
+    color: #4FC18C;
+}
+.hero-desc {
+    font-size: 18px;
+    line-height: 1.8;
+    opacity: 0.95;
+    margin: 0 0 40px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.hero-desc strong {
+    color: #fff;
+    font-weight: 700;
+}
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+}
+.btn-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.btn-hero.btn-primary {
+    background: var(--accent);
+    color: #fff;
+}
+.btn-hero.btn-primary:hover {
+    background: #00925d;
+    transform: translateY(-2px);
+}
+.btn-hero.btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.btn-hero.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+}
+
+
+/* ---------- [2] 통계 카운터 ---------- */
+.main-stats {
+    background: #fff;
+    border-bottom: 1px solid #e2e8f0;
+}
+.main-stats .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.stat-item {
+    padding: 50px 20px;
+    text-align: center;
+    border-right: 1px solid #e2e8f0;
+}
+.stat-item:last-child {
+    border-right: none;
+}
+.stat-number {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+}
+.stat-number span {
+    font-size: 16px;
+    color: #888;
+    font-weight: 500;
+    margin-left: 4px;
+}
+.stat-number.stat-accent {
+    color: var(--accent);
+}
+.stat-label {
+    font-size: 13px;
+    color: #888;
+    margin-top: 12px;
+    letter-spacing: 1px;
+}
+
+
+/* ---------- [3] 빠른 메뉴 (4개 카드) - 연한 컬러 풀 ---------- */
+.main-quick {
+    background: #fff;
+    padding: 80px 20px;
+}
+.main-quick .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.quick-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* 카드 공통 */
+.quick-card {
+    padding: 50px 32px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+.quick-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0, 59, 111, 0.12);
+}
+
+/* 카드 컬러 (연한 파스텔 톤) */
+.quick-card.card-blue-light {
+    background: linear-gradient(135deg, #e8f1fa 0%, #d6e7f5 100%);
+}
+.quick-card.card-green-light {
+    background: linear-gradient(135deg, #e6f5ee 0%, #d2ecdf 100%);
+}
+.quick-card.card-blue-light2 {
+    background: linear-gradient(135deg, #eaf0f6 0%, #dde7f0 100%);
+}
+.quick-card.card-green-light2 {
+    background: linear-gradient(135deg, #ecf6f0 0%, #d8ecdf 100%);
+}
+
+/* 호버 시 살짝 진하게 */
+.quick-card.card-blue-light:hover {
+    background: linear-gradient(135deg, #d6e7f5 0%, #b8d4eb 100%);
+}
+.quick-card.card-green-light:hover {
+    background: linear-gradient(135deg, #d2ecdf 0%, #b3ddc7 100%);
+}
+.quick-card.card-blue-light2:hover {
+    background: linear-gradient(135deg, #dde7f0 0%, #c4d4e3 100%);
+}
+.quick-card.card-green-light2:hover {
+    background: linear-gradient(135deg, #d8ecdf 0%, #bcdcca 100%);
+}
+
+/* 아이콘 영역 */
+.quick-icon-area {
+    color: var(--primary);
+    opacity: 0.75;
+}
+.quick-icon-area svg {
+    width: 44px;
+    height: 44px;
+}
+
+/* 그린 카드는 그린 컬러 아이콘 */
+.card-green-light .quick-icon-area,
+.card-green-light2 .quick-icon-area {
+    color: #00795c;
+}
+
+/* 텍스트 영역 */
+.quick-text-area {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.card-eng {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: rgba(0, 59, 111, 0.6);
+    font-weight: 700;
+}
+.card-green-light .card-eng,
+.card-green-light2 .card-eng {
+    color: rgba(0, 121, 92, 0.7);
+}
+.quick-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+.card-green-light h3,
+.card-green-light2 h3 {
+    color: #00553f;
+}
+
+/* 반응형 */
+@media (max-width: 992px) {
+    .quick-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .quick-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    .quick-card {
+        min-height: 180px;
+        padding: 36px 28px;
+    }
+    .quick-card h3 {
+        font-size: 20px;
+    }
+}
+
+/* 화살표 크기 키움 */
+.quick-arrow {
+    position: absolute;
+    top: 60px;
+    right: 36px;
+    color: #ccc;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+.quick-card:hover .quick-arrow {
+    color: var(--accent);
+    transform: translateX(6px);
+}
+
+
+/* ---------- [4] 공지사항 + 연락처 ---------- */
+.main-info {
+    background: #fff;
+    padding: 100px 20px;
+}
+.main-info .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.info-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+/* 공지사항 */
+.info-notice {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    padding: 30px;
+}
+.info-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--primary);
+    margin-bottom: 18px;
+}
+.info-head h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0;
+}
+.more-link {
+    font-size: 13px;
+    color: #888;
+    text-decoration: none;
+}
+.more-link:hover {
+    color: var(--accent);
+}
+
+.notice-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.notice-list li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0f4f8;
+    font-size: 14px;
+}
+.notice-list li:last-child {
+    border-bottom: none;
+}
+.notice-cat {
+    background: #e8f4fd;
+    color: var(--primary);
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    min-width: 50px;
+    text-align: center;
+}
+.notice-title {
+    flex: 1;
+    color: #333;
+}
+.notice-list li:hover .notice-title {
+    color: var(--primary);
+    font-weight: 500;
+}
+.notice-date {
+    color: #999;
+    font-size: 12px;
+}
+
+/* 연락처 박스 */
+.info-contact {
+    background: var(--primary);
+    color: #fff;
+    padding: 30px;
+}
+.info-contact h3 {
+    font-size: 14px;
+    letter-spacing: 4px;
+    opacity: 0.7;
+    margin: 0 0 12px;
+    font-weight: 600;
+}
+.info-contact .contact-name {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.contact-list li {
+    padding: 8px 0;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+.contact-label {
+    color: #4FC18C;
+    font-weight: 700;
+    min-width: 50px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding-top: 2px;
+}
+.contact-value {
+    opacity: 0.95;
+}
+.contact-addr {
+    align-items: flex-start;
+}
+
+
+/* ---------- [5] 메인 페이지 반응형 ---------- */
+@media (max-width: 992px) {
+    .main-hero {
+        padding: 120px 20px 100px;
+        min-height: 500px;
+    }
+    .hero-title {
+        font-size: 36px;
+    }
+    .hero-desc {
+        font-size: 16px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .stat-item {
+        border-bottom: 1px solid #e2e8f0;
+    }
+    .stat-item:nth-child(2) {
+        border-right: none;
+    }
+    .stat-item:nth-child(3),
+    .stat-item:nth-child(4) {
+        border-bottom: none;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-hero {
+        padding: 100px 20px 80px;
+        min-height: 450px;
+    }
+    .hero-title {
+        font-size: 28px;
+    }
+    .hero-desc {
+        font-size: 14px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+    }
+    .btn-hero {
+        justify-content: center;
+    }
+    
+    .stat-number {
+        font-size: 32px;
+    }
+    
+    .main-quick,
+    .main-info {
+        padding: 60px 20px;
+    }
+    .section-title h2 {
+        font-size: 24px;
+    }
+    
+    .notice-list li {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* ============================================
+   [2] 공통 - 모든 서브 페이지에서 사용
+   ============================================ */
+
+/* 페이지 wrap (공통 컨테이너) */
+.page-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+/* 페이지 타이틀 (공통) */
+.page-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.page-title .eng {
+    display: block;
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+.page-title h2 {
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 16px 0;
+    line-height: 1.3;
+}
+.page-title h2 span {
+    color: var(--accent);
+}
+.page-title p {
+    font-size: 16px;
+    color: var(--text-mute);
+    margin: 0;
+}
+
+
+/* ============================================
+   [3] 인사말 페이지 (about.php)
+   ============================================ */
+.greeting-content {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 60px;
+    align-items: start;
+}
+.greeting-photo {
+    position: relative;
+}
+.greeting-photo .photo-box {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 20px 50px rgba(0, 59, 111, 0.25);
+    position: relative;
+}
+.greeting-photo .photo-box::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: -15px;
+    width: 80px;
+    height: 80px;
+    background: var(--accent);
+    border-radius: 4px;
+    z-index: -1;
+}
+.greeting-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+}
+.greeting-photo .name-tag {
+    background: #fff;
+    padding: 24px 28px;
+    margin-top: -30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+.greeting-photo .name-tag .position {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+.greeting-photo .name-tag .name {
+    font-size: 24px;
+    color: var(--primary);
+    font-weight: 700;
+    margin: 0;
+}
+.greeting-photo .name-tag .name small {
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+    margin-left: 6px;
+}
+
+.greeting-text {
+    position: relative;
+    padding-top: 20px;
+}
+.greeting-text .quote {
+    font-size: 80px;
+    color: var(--accent);
+    line-height: 1;
+    font-family: Georgia, serif;
+    font-weight: 700;
+    margin-bottom: -20px;
+    display: block;
+}
+.greeting-text .lead {
+    font-size: 24px;
+    color: var(--primary);
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+.greeting-text p {
+    font-size: 16px;
+    color: var(--text-body);
+    line-height: 1.9;
+    margin-bottom: 18px;
+    word-break: keep-all;
+}
+.greeting-text .sign {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid var(--primary);
+    text-align: right;
+    font-size: 18px;
+    color: var(--primary);
+    font-weight: 600;
+}
+.greeting-text .sign strong {
+    font-size: 22px;
+    margin-left: 4px;
+}
+
+/* ============================================
+   조직도 페이지 - 듀얼 링 디자인 (최종)
+   ============================================ */
+.org-premium {
+    background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
+    padding: 60px 30px;
+    border-radius: 16px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.org-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* 듀얼 링 원형 노드 */
+.dual-circle {
+    position: relative;
+    width: 140px;
+    height: 140px;
+}
+.dual-circle .ring-outer {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    opacity: 0.2;
+}
+.dual-circle .ring-inner {
+    position: absolute;
+    inset: 8px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid var(--primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dual-circle .label {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 1.3;
+}
+
+/* 그린 액센트 */
+.dual-circle.green .ring-outer {
+    border-color: var(--accent);
+}
+.dual-circle.green .ring-inner {
+    border-color: var(--accent);
+}
+.dual-circle.green .label {
+    color: var(--accent);
+}
+
+/* 작은 원 */
+.dual-circle.small {
+    width: 110px;
+    height: 110px;
+}
+.dual-circle.small .ring-inner {
+    inset: 6px;
+    border-width: 2px;
+}
+.dual-circle.small .label {
+    font-size: 13px;
+    color: var(--primary);
+}
+
+/* 중간 원 (사무국) */
+.dual-circle.mid {
+    width: 130px;
+    height: 130px;
+}
+.dual-circle.mid .label {
+    font-size: 16px;
+}
+
+/* 세로 연결선 */
+.v-line {
+    width: 1px;
+    height: 70px;
+    background: #cbd5e0;
+}
+
+/* ========== 사무국 + 이사회 분기 (중앙 정렬) ========== */
+.org-board-branch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 사무국과 이사회를 묶는 컨테이너 */
+.center-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 사무국이 정중앙에 오도록 (이사회는 절대위치로 배치) */
+.center-group .main-node {
+    position: relative;
+    z-index: 2;
+}
+
+/* 이사회 그룹 (동그라미 + 알약 묶음) - 우측 절대 위치 */
+.board-side {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+/* 가로 연결선 (사무국 → 이사회) */
+.board-side .h-connector {
+    width: 80px;
+    height: 1px;
+    background: #cbd5e0;
+}
+
+/* 이사회 동그라미 + 임원 알약 묶음 */
+.board-with-pills {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* 이사회 임원 알약 (세로 정렬) */
+.board-pills {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.board-pills .pill {
+    background: #e8f4fd;
+    color: var(--primary);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    min-width: 100px;
+}
+
+/* 사무국 산하 묶음 (국장/과장 + 세로선) */
+.dept-pills-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 세로선 - 사무국 → 분기까지 관통 */
+.dept-pills-wrap::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    bottom: -0px;
+    left: 50%;
+    width: 1px;
+    background: #cbd5e0;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+/* 사무국 산하 알약 */
+.dept-pills {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.dept-pills .pill {
+    background: #e6fffa;
+    color: #00795c;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+
+/* 하단 가로 분기 */
+.bottom-branches {
+    position: relative;
+    display: flex;
+    gap: 70px;
+}
+.bottom-branches::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 110px);
+    height: 1px;
+    background: #cbd5e0;
+}
+.bottom-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bottom-item .item-line {
+    width: 1px;
+    height: 20px;
+    background: #cbd5e0;
+}
+
+/* ============================================
+   [5] 반응형 (태블릿 / 모바일)
+   ============================================ */
+
+/* ===== 태블릿 (~992px) ===== */
+@media (max-width: 992px) {
+    
+    /* 공통 */
+    .page-title h2 {
+        font-size: 28px;
+    }
+    .page-title .eng {
+        font-size: 13px;
+    }
+    
+    /* 인사말 */
+    .greeting-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .greeting-photo {
+        max-width: 380px;
+        margin: 0 auto;
+    }
+    .greeting-text .lead {
+        font-size: 20px;
+    }
+    .greeting-text .quote {
+        font-size: 60px;
+    }
+    
+    /* 조직도 - 사무국+이사회 세로 정렬 */
+    .org-board-branch {
+        flex-direction: column;
+    }
+    .center-group {
+        flex-direction: column;
+    }
+    .board-side {
+        position: static;
+        transform: none;
+        margin-top: 20px;
+        flex-direction: column;
+        gap: 0;
+    }
+    .board-side .h-connector {
+        width: 1px;
+        height: 30px;
+    }
+    .board-with-pills {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    /* 하단 분기 - 세로 정렬 */
+    .bottom-branches {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    .bottom-branches::before {
+        display: none;
+    }
+    .bottom-item .item-line {
+        height: 30px;
+    }
+}
+
+/* ===== 모바일 (~768px) ===== */
+@media (max-width: 768px) {
+    
+    /* 페이지 wrap */
+    .page-wrap {
+        padding: 60px 16px;
+    }
+    .page-title {
+        margin-bottom: 40px;
+    }
+    .page-title h2 {
+        font-size: 24px;
+    }
+    .page-title p {
+        font-size: 14px;
+    }
+    
+    /* 인사말 - 사진 작게 */
+    .greeting-content {
+        gap: 30px;
+    }
+    .greeting-photo {
+        max-width: 300px;
+    }
+    .greeting-photo .name-tag {
+        padding: 18px 22px;
+    }
+    .greeting-photo .name-tag .name {
+        font-size: 20px;
+    }
+    .greeting-text {
+        padding-top: 10px;
+    }
+    .greeting-text .lead {
+        font-size: 18px;
+    }
+    .greeting-text p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+    .greeting-text .sign {
+        font-size: 16px;
+        text-align: center;
+    }
+    .greeting-text .sign strong {
+        font-size: 18px;
+    }
+    
+    /* 조직도 - 패딩 줄이기 */
+    .org-premium {
+        padding: 40px 20px;
+    }
+    
+    /* 원형 노드 살짝 줄이기 */
+    .dual-circle {
+        width: 120px;
+        height: 120px;
+    }
+    .dual-circle .label {
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+    .dual-circle.mid {
+        width: 115px;
+        height: 115px;
+    }
+    .dual-circle.mid .label {
+        font-size: 14px;
+    }
+    .dual-circle.small {
+        width: 100px;
+        height: 100px;
+    }
+    .dual-circle.small .label {
+        font-size: 12px;
+    }
+    
+    /* 세로선 짧게 */
+    .v-line {
+        height: 50px;
+    }
+    
+    /* 알약 작게 */
+    .board-pills .pill,
+    .dept-pills .pill {
+        font-size: 11px;
+        padding: 5px 14px;
+        min-width: 90px;
+    }
+    
+    /* 국장/과장 마진 줄이기 */
+    .dept-pills {
+        margin-bottom: 30px;
+    }
+}
+
+/* ===== 작은 모바일 (~480px) ===== */
+@media (max-width: 480px) {
+    
+    .page-wrap {
+        padding: 40px 12px;
+    }
+    .page-title h2 {
+        font-size: 20px;
+    }
+    
+    /* 인사말 */
+    .greeting-photo {
+        max-width: 260px;
+    }
+    .greeting-text .lead {
+        font-size: 16px;
+    }
+    .greeting-text p {
+        font-size: 14px;
+    }
+    
+    /* 조직도 */
+    .org-premium {
+        padding: 30px 12px;
+    }
+    .dual-circle {
+        width: 110px;
+        height: 110px;
+    }
+    .dual-circle.mid {
+        width: 105px;
+        height: 105px;
+    }
+    .dual-circle.small {
+        width: 95px;
+        height: 95px;
+    }
+}
+
+/* ============================================
+   푸터
+   ============================================ */
+.main-footer {
+    background: #1a2942;  /* 딥블루보다 살짝 어두운 톤 */
+    color: #fff;
+    padding: 30px 20px 30px;
+    margin-top: 0;
+}
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 상단 영역 (정보 + 링크) */
+.footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    gap: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 좌측 협의회 정보 */
+.footer-info .footer-title {
+    margin-bottom: 24px;
+}
+.footer-info .eng {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--accent-light);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.footer-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.footer-address {
+    font-style: normal;
+}
+.footer-address .addr {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0 0 14px;
+    line-height: 1.6;
+}
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.contact-info li {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.75);
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.contact-info .label {
+    background: rgba(0, 168, 107, 0.15);
+    color: var(--accent-light);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    min-width: 50px;
+    text-align: center;
+}
+.contact-info a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+}
+.contact-info a:hover {
+    color: var(--accent-light);
+}
+
+/* 우측 빠른 링크 */
+.footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+}
+.link-group h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 16px;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+}
+.link-group h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: var(--accent);
+}
+.link-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.link-group li {
+    padding: 4px 0;
+}
+.link-group a {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.link-group a:hover {
+    color: var(--accent-light);
+}
+
+/* 하단 카피라이트 */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+}
+.copyright {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+.footer-login a {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.2s ease;
+}
+.footer-login a:hover {
+    color: #fff;
+    border-color: var(--accent);
+}
+
+/* 반응형 */
+@media (max-width: 992px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-footer {
+        padding: 40px 20px 24px;
+    }
+    .footer-links {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+    }
+}

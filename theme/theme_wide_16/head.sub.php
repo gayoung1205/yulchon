@@ -145,7 +145,7 @@ if(!defined('G5_IS_ADMIN'))
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 <script src="<?php echo G5_THEME_URL?>/js/common.js"></script>
 
-
+<link rel="stylesheet" href="<?php echo G5_URL?>/css/yulchon.css?ver=<?php echo time(); ?>">
 </head>
 <body<?php echo isset($g5['body_script']) ? $g5['body_script'] : ''; ?>>
 <?php

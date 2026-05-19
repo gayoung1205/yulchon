@@ -92,13 +92,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 </div>
 </div>
 
-<?php if ($is_category) { ?>
-<nav id="bo_cate">
-<h2><?php echo $board['bo_subject'] ?> 카테고리</h2>
-<ul id="bo_cate_ul"><?php echo $category_option ?></ul>
-</nav>
-<?php } ?>
-
 <form name="fboardlist" id="fboardlist" action="./board_list_update.php" onsubmit="return fboardlist_submit(this);" method="post">
 <input type="hidden" name="bo_table" value="<?php echo $bo_table ?>">
 <input type="hidden" name="sfl" value="<?php echo $sfl ?>">

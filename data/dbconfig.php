@@ -3,12 +3,12 @@ if (!defined('_GNUBOARD_')) exit;
 define('G5_MYSQL_HOST', 'localhost');
 define('G5_MYSQL_USER', 'root');
 define('G5_MYSQL_PASSWORD', '1234');
-define('G5_MYSQL_DB', 'g5');
+define('G5_MYSQL_DB', 'yulchon');
 define('G5_MYSQL_SET_MODE', true);
 
 define('G5_TABLE_PREFIX', 'g5_');
 
-define('G5_TOKEN_ENCRYPTION_KEY', '46b531e4482fd9f301d148dd148a2ae8'); // 토큰 암호화에 사용할 키
+define('G5_TOKEN_ENCRYPTION_KEY', 'fb18fad8056022a9a6d5d73cb9ac9ea8'); // 토큰 암호화에 사용할 키
 
 $g5['write_prefix'] = G5_TABLE_PREFIX.'write_'; // 게시판 테이블명 접두사
 
