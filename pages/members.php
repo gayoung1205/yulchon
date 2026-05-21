@@ -3,7 +3,7 @@ include_once('./_common.php');
 include_once(G5_THEME_PATH.'/head.php');
 ?>
 
-<?php $title = "협의회소개"?>
+<?php $title = "회원사 소개"?>
 
 <div class="position-relative overflow-hidden p-md-5 text-center bg-dark bg-sub-1 ety-mt-main about-bg">
   <div class="col-md-5 mx-auto">
@@ -11,25 +11,21 @@ include_once(G5_THEME_PATH.'/head.php');
   </div>
   <div class="lnb_wrap">
     <ul class="lnb_ul">
-        <li><a href="/pages/about.php">인사말</a></li>
-        <li><a href="/pages/vision.php">비전 & 목표</a></li>
-        <li><a href="/pages/history.php" class="on">연혁</a></li>
-        <li><a href="/pages/organization.php">조직도</a></li>
-        <li><a href="/pages/certificate.php">인증서</a></li>
+        <li><a href="/pages/members.php" class="on">회원사 현황</a></li>
     </ul>
   </div>
 </div>
 
 <div class="home">
-    <a href="/"><i class="fas fa-home"></i></a> > 협의회소개 > 연혁
+    <a href="/"><i class="fas fa-home"></i></a> > 회원사 소개 > 회원사 현황
 </div>
 
 <div class="page-wrap">
 
     <div class="page-title">
-        <span class="eng">HISTORY</span>
-        <h2>연혁</h2>
-        <p>(사)율촌·해룡산단협의회의 발자취입니다.</p>
+        <span class="eng">MEMBERS</span>
+        <h2>회원사 현황</h2>
+        <p>율촌·해룡 산업단지의 회원사를 소개합니다.</p>
     </div>
 
     <div class="coming-soon">

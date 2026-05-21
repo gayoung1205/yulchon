@@ -32,7 +32,6 @@ include_once(G5_THEME_PATH.'/head.php');
     <div class="page-title">
         <span class="eng">ORGANIZATION</span>
         <h2>조직구성 및 임원현황</h2>
-        <p>(사)율촌·해룡산단협의회는 효율적인 운영을 위해 다음과 같이 조직되어 있습니다.</p>
     </div>
 
     <!-- 듀얼 링 조직도 -->

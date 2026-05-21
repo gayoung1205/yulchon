@@ -42,7 +42,7 @@
 		foreach( $menu_datas as $row ){
 			if( empty($row) ) continue; 
 		?>			
-			<?php if($row['sub']['0']) { ?>
+			<?php if(isset($row['sub']) && isset($row['sub']['0'])) { ?>
 				<li class="nav-item dropdown megamenu-li">
 					<a class="nav-link dropdown-toggle ks4 f18" href="<?php echo $row['me_link']; ?>" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" target="_<?php echo $row['me_target']; ?>">
 					<?php echo $row['me_name'] ?>
