@@ -1,28 +1,15 @@
 <?php
 include_once('./_common.php');
 include_once(G5_THEME_PATH.'/head.php');
+
+$title = "협의회소개";
+$section = "about";
+$current_menu = "certificate";
+$breadcrumb = "> 협의회소개 > 인증서";
+
+// 공통 헤더 불러오기
+include_once(G5_PATH.'/pages/_sub_header.php');
 ?>
-
-<?php $title = "협의회소개"?>
-
-<div class="position-relative overflow-hidden p-md-5 text-center bg-dark bg-sub-1 ety-mt-main about-bg">
-  <div class="col-md-5 mx-auto">
-    <h1 class="display-4 font-weight-normal h1_subTitle"><?php echo $title?></h1>
-  </div>
-  <div class="lnb_wrap">
-    <ul class="lnb_ul">
-        <li><a href="/pages/about.php">인사말</a></li>
-        <li><a href="/pages/vision.php">비전 & 목표</a></li>
-        <li><a href="/pages/history.php">연혁</a></li>
-        <li><a href="/pages/organization.php">조직도</a></li>
-        <li><a href="/pages/certificate.php" class="on">인증서</a></li>
-    </ul>
-  </div>
-</div>
-
-<div class="home">
-    <a href="/"><i class="fas fa-home"></i></a> > 협의회소개 > 인증서
-</div>
 
 <div class="page-wrap">
 

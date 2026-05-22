@@ -1,24 +1,15 @@
 <?php
 include_once('./_common.php');
 include_once(G5_THEME_PATH.'/head.php');
+
+$title = "사업 안내";
+$section = "business";
+$current_menu = "business";
+$breadcrumb = "> 사업 안내 > 사업안내";
+
+// 공통 헤더 불러오기
+include_once(G5_PATH.'/pages/_sub_header.php');
 ?>
-
-<?php $title = "사업 안내"?>
-
-<div class="position-relative overflow-hidden p-md-5 text-center bg-dark bg-sub-1 ety-mt-main about-bg">
-  <div class="col-md-5 mx-auto">
-    <h1 class="display-4 font-weight-normal h1_subTitle"><?php echo $title?></h1>
-  </div>
-  <div class="lnb_wrap">
-    <ul class="lnb_ul">
-        <li><a href="/pages/business.php" class="on">주요 사업</a></li>
-    </ul>
-  </div>
-</div>
-
-<div class="home">
-    <a href="/"><i class="fas fa-home"></i></a> > 사업 안내 > 주요 사업
-</div>
 
 <div class="page-wrap">
 
