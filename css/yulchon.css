@@ -561,77 +561,129 @@
     margin: 0;
 }
 
-
 /* ============================================
-   [3] 인사말 페이지 (about.php)
+   [3] 인사말 페이지 (about.php) - 그라디언트 도형 배경형
+   2026.05.21 / 격조 + 존재감 동시에
    ============================================ */
 .greeting-content {
     display: grid;
     grid-template-columns: 380px 1fr;
-    gap: 60px;
+    gap: 70px;
     align-items: start;
 }
+
+/* ---------- 회장 사진 영역 ---------- */
 .greeting-photo {
     position: relative;
+    padding: 20px 20px 0 0;  /* 우측 상단으로 도형 튀어나갈 공간 확보 */
 }
-.greeting-photo .photo-box {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-    padding: 20px;
-    border-radius: 4px;
-    box-shadow: 0 20px 50px rgba(0, 59, 111, 0.25);
-    position: relative;
-}
-.greeting-photo .photo-box::before {
+
+/* 사진 뒤 그라디언트 도형 (메인 데코) */
+.greeting-photo::before {
     content: '';
     position: absolute;
-    top: 30px;
-    left: -15px;
-    width: 80px;
-    height: 80px;
-    background: var(--accent);
-    border-radius: 4px;
-    z-index: -1;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 65%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    z-index: 0;
+    border-radius: 2px;
 }
+
+/* 사진 뒤 보조 도형 (좌측 하단) */
+.greeting-photo::after {
+    content: '';
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    width: 40%;
+    height: 30%;
+    background: rgba(0, 168, 107, 0.08);  /* 그린 8% 투명 */
+    z-index: 0;
+    border-radius: 2px;
+}
+
+/* 사진 박스 - 깔끔한 직사각형 */
+.greeting-photo .photo-box {
+    background: transparent;
+    padding: 0;
+    border-radius: 2px;
+    box-shadow: 0 20px 40px rgba(0, 59, 111, 0.15);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* 옛 그린 사각형 데코 제거 */
+.greeting-photo .photo-box::before {
+    display: none;
+}
+
+/* 회장 사진 */
 .greeting-photo img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 2px;
+    border-radius: 0;
+    transition: transform 0.5s ease;
 }
+
+/* hover 시 살짝 줌 */
+.greeting-photo .photo-box:hover img {
+    transform: scale(1.03);
+}
+
+/* ---------- 이름 태그 영역 ---------- */
 .greeting-photo .name-tag {
     background: #fff;
-    padding: 24px 28px;
-    margin-top: -30px;
-    margin-left: 30px;
-    margin-right: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 24px 30px;
+    margin: -40px 20px 0 20px;  /* 사진 위로 살짝 겹쳐서 카드 느낌 */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
     position: relative;
     z-index: 2;
+    text-align: left;
+    border-left: 3px solid var(--primary);  /* 좌측 액센트 라인 */
 }
+
+.greeting-photo .name-tag::before {
+    display: none;
+}
+
 .greeting-photo .name-tag .position {
-    font-size: 14px;
-    color: var(--accent);
+    font-family: 'Pretendard', sans-serif;
+    font-size: 12px;
+    color: var(--accent);  /* 그린으로 포인트 */
     font-weight: 600;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
+    letter-spacing: 2.5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
 }
+
 .greeting-photo .name-tag .name {
+    font-family: 'GmarketSans', sans-serif;
     font-size: 24px;
     color: var(--primary);
     font-weight: 700;
     margin: 0;
-}
-.greeting-photo .name-tag .name small {
-    font-size: 15px;
-    font-weight: 500;
-    color: #555;
-    margin-left: 6px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
 }
 
+.greeting-photo .name-tag .name small {
+    font-size: 15px;
+    font-weight: 400;
+    color: #888;
+    margin-left: 8px;
+    letter-spacing: 0;
+}
+
+/* ---------- 우측: 인사말 텍스트 ---------- */
 .greeting-text {
     position: relative;
     padding-top: 20px;
 }
+
 .greeting-text .quote {
     font-size: 80px;
     color: var(--accent);
@@ -641,6 +693,7 @@
     margin-bottom: -20px;
     display: block;
 }
+
 .greeting-text .lead {
     font-size: 24px;
     color: var(--primary);
@@ -648,6 +701,7 @@
     line-height: 1.5;
     margin-bottom: 30px;
 }
+
 .greeting-text p {
     font-size: 16px;
     color: var(--text-body);
@@ -655,6 +709,7 @@
     margin-bottom: 18px;
     word-break: keep-all;
 }
+
 .greeting-text .sign {
     margin-top: 40px;
     padding-top: 30px;
@@ -664,6 +719,7 @@
     color: var(--primary);
     font-weight: 600;
 }
+
 .greeting-text .sign strong {
     font-size: 22px;
     margin-left: 4px;
@@ -914,8 +970,9 @@
         gap: 40px;
     }
     .greeting-photo {
-        max-width: 380px;
+        max-width: 400px;
         margin: 0 auto;
+        padding: 20px 20px 0 0;
     }
     .greeting-text .lead {
         font-size: 20px;
@@ -923,7 +980,7 @@
     .greeting-text .quote {
         font-size: 60px;
     }
-    
+   
     /* 조직도 - 사무국+이사회 세로 정렬 */
     .org-board-branch {
         flex-direction: column;
@@ -986,7 +1043,7 @@
         max-width: 300px;
     }
     .greeting-photo .name-tag {
-        padding: 18px 22px;
+        padding: 22px 0 0 0;
     }
     .greeting-photo .name-tag .name {
         font-size: 20px;
