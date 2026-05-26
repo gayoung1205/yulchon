@@ -9,7 +9,9 @@
 </style>
 <nav class="navbar fixed-top navbar-expand-lg navbar-white bg-white fixed-top">
   <div class="container">
-	<a class="navbar-brand" href="<?php echo G5_URL?>" class="logo"><img src="<?php echo G5_THEME_URL?>/img/logo.png"></a>
+	<a class="navbar-brand brand-yulchon" href="<?php echo G5_URL?>">
+		<img src="<?php echo G5_THEME_URL?>/img/logo_yulchon.png" alt="율촌·해룡산단협의회" class="brand-logo-img">
+	</a>
 	<button class="navbar-toggler navbar-dark navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 	  <span class="navbar-toggler-icon"></span>
 	</button>

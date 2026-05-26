@@ -31,21 +31,21 @@
    [1] 컬러 변수 정의 (한 곳에서 관리)
    ======================================================================== */
 :root {
-    /* 메인 컬러 */
-    --primary: #003B6F;        /* 딥블루 */
-    --primary-light: #1E5A8E;
-    --accent: #00A86B;         /* 그린 액센트 */
-    --accent-light: #4FC18C;
+    /* 메인 컬러 - 로고 매칭 미드나잇 블루 */
+    --primary: #2c5282;        /* 로고 파란색에 가까운 톤 */
+    --primary-light: #4a7ab5;  /* 라이트 블루 */
+    --accent: #1a365d;         /* 더 진한 네이비 (텍스트/포인트) */
+    --accent-light: #718096;   /* 그레이 */
     
     /* 텍스트 */
     --text-dark: #1a1a1a;
-    --text-body: #444;
-    --text-mute: #888;
+    --text-body: #2d3748;
+    --text-mute: #95a5a6;
     
     /* 배경 */
-    --bg-light: #f5f9fc;
-    --bg-section: #fafbfc;
-    --border-light: #e1e8ed;
+    --bg-light: #f7fafc;
+    --bg-section: #ffffff;
+    --border-light: #d8dee5;
 }
 
 
@@ -300,7 +300,7 @@
 .hero-eng {
     font-size: 13px;
     letter-spacing: 4px;
-    color: #4FC18C;
+    color: #7a8fa8;  
     margin: 0 0 20px;
     font-weight: 600;
 }
@@ -312,7 +312,20 @@
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 .hero-title span {
-    color: #4FC18C;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+}
+
+/* 하단에 액센트 바 추가로 강조 */
+.hero-title span::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.6);
 }
 .hero-desc {
     font-size: 18px;
@@ -635,7 +648,7 @@
     gap: 12px;
 }
 .contact-label {
-    color: #4FC18C;
+    color: #7a8fa8;  
     font-weight: 700;
     min-width: 50px;
     font-size: 12px;
@@ -1032,6 +1045,172 @@
     background: #cbd5e0;
 }
 
+/* ========================================================================
+   [7] 연혁 페이지 (history.php) - 좌우 교차 타임라인
+   2026.05.22 / 협의회 14년 역사 디자인 (B타입)
+   ======================================================================== */
+.history-timeline-cross {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* 중앙 라인 (위→아래 딥블루→그린 그라디언트) */
+.history-timeline-cross::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary) 0%, var(--accent) 100%);
+    transform: translateX(-50%);
+}
+
+/* ---------- 연도 배지 ---------- */
+.year-badge-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 24px;
+    position: relative;
+    z-index: 2;
+}
+
+.year-badge {
+    background: #fff;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 28px;
+    border-radius: 0px;
+    font-family: 'GmarketSans', sans-serif;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 16px rgba(0, 59, 111, 0.1);
+}
+
+.year-badge.green {
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: 0 4px 16px rgba(0, 168, 107, 0.1);
+}
+
+.year-badge-wrap:first-child {
+    margin-top: 0;
+}
+
+/* ---------- 좌우 교차 아이템 ---------- */
+.cross-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    position: relative;
+    min-height: 60px;
+}
+
+.cross-item:last-child {
+    margin-bottom: 0;
+}
+
+/* 중앙 점 (이벤트 마커) */
+.cross-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid var(--primary);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    box-shadow: 0 0 0 4px #fff;
+    transition: all 0.3s ease;
+}
+
+/* 강조 이벤트 (큰 점, 그린) */
+.cross-item.highlight::before {
+    background: var(--accent);
+    border-color: var(--accent);
+    width: 20px;
+    height: 20px;
+}
+
+/* ---------- 좌우 영역 ---------- */
+.cross-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* 좌측 카드 */
+.cross-item.left .cross-left-side {
+    justify-content: flex-end;
+    padding-right: 50px;
+}
+.cross-item.left .cross-right-side {
+    visibility: hidden;
+}
+
+/* 우측 카드 */
+.cross-item.right .cross-left-side {
+    visibility: hidden;
+}
+.cross-item.right .cross-right-side {
+    justify-content: flex-start;
+    padding-left: 50px;
+}
+
+.cross-card {
+    background: #fff;
+    border-radius: 0; 
+    padding: 20px 24px;
+    border: 0.5px solid #e1e8ed;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    max-width: 360px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.cross-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 59, 111, 0.12);
+}
+
+.cross-card.featured {
+    
+}
+
+/* 월일 표시 */
+.cross-month {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* 메인 내용 */
+.cross-title {
+    font-size: 15px;
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin: 0 0 6px 0;
+    word-break: keep-all;
+    font-weight: 500;
+}
+
+/* 부가 설명 */
+.cross-sub {
+    font-size: 13px;
+    color: var(--text-mute);
+    line-height: 1.5;
+    word-break: keep-all;
+}
+
 
 /* ========================================================================
    [7] 준비 중 페이지 (Coming Soon)
@@ -1351,6 +1530,36 @@
     .bottom-item .item-line {
         height: 30px;
     }
+
+    /* ---------- [7] 연혁 페이지 ---------- */
+    .history-timeline-cross::before {
+        left: 20px;
+    }
+    .year-badge-wrap {
+        justify-content: flex-start;
+        padding-left: 0;
+    }
+    .year-badge {
+        margin-left: -8px;
+        font-size: 18px;
+        padding: 8px 22px;
+    }
+    .cross-item.left .cross-left-side,
+    .cross-item.right .cross-right-side {
+        padding-left: 50px;
+        padding-right: 0;
+        justify-content: flex-start;
+    }
+    .cross-item.left .cross-right-side,
+    .cross-item.right .cross-left-side {
+        display: none;
+    }
+    .cross-item::before {
+        left: 20px;
+    }
+    .cross-card {
+        max-width: 100%;
+    }
     
     /* ---------- [8] 푸터 ---------- */
     .footer-top {
@@ -1521,6 +1730,24 @@
     .dept-pills {
         margin-bottom: 30px;
     }
+
+    /* ---------- [7] 연혁 페이지 ---------- */
+    .year-badge-wrap {
+        margin: 20px 0 16px;
+    }
+    .year-badge {
+        font-size: 16px;
+        padding: 7px 20px;
+    }
+    .cross-card {
+        padding: 16px 18px;
+    }
+    .cross-title {
+        font-size: 14px;
+    }
+    .cross-sub {
+        font-size: 12px;
+    }
     
     /* ---------- [7] 준비 중 페이지 ---------- */
     .coming-soon {
@@ -1609,5 +1836,54 @@
     .dual-circle.small {
         width: 95px;
         height: 95px;
+    }
+
+    /* ---------- [7] 연혁 페이지 ---------- */
+    .year-badge {
+        font-size: 14px;
+        padding: 6px 18px;
+    }
+    .cross-card {
+        padding: 14px 16px;
+    }
+    .cross-month {
+        font-size: 11px;
+    }
+}
+
+/* ========================================================================
+   [10] 헤더 브랜드 (정식 로고 적용)
+   2026.05.26 / 율촌·해룡산단협의회 로고 적용
+   ======================================================================== */
+.navbar-brand.brand-yulchon {
+    display: flex !important;
+    align-items: center;
+    padding: 0;
+    text-decoration: none;
+}
+
+.navbar-brand.brand-yulchon:hover {
+    text-decoration: none;
+    opacity: 0.85;
+}
+
+/* 로고 이미지 */
+.brand-logo-img {
+    height: 70px;  /* PC 기본 */
+    width: auto;
+    display: block;
+    transition: opacity 0.2s ease;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .brand-logo-img {
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-logo-img {
+        height: 32px;
     }
 }
