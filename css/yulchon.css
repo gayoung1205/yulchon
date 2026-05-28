@@ -1638,6 +1638,35 @@
 }
 
 /* ========================================================================
+   푸터 로그인/관리자 링크
+   ======================================================================== */
+.footer-admin-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.footer-admin-links a {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6) !important;   /* 은은한 흰색 */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.footer-admin-links a:hover {
+    color: #fff !important;                         /* 호버 시 밝게 */
+    text-decoration: none;
+}
+
+/* 링크 사이 구분선 (관리자 | 로그아웃) */
+.footer-admin-links a:not(:last-child)::after {
+    content: "|";
+    margin-left: 14px;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+/* ========================================================================
    [9] 인증서 페이지 (certificate.php) - 카드 + 클릭 확대
    2026.05.26 / 모던 갤러리 + 라이트박스
    ======================================================================== */
@@ -2089,6 +2118,7 @@
         grid-template-columns: 1fr;
         gap: 40px;
     }
+    
     /* ---------- [9] 인증서 페이지 ---------- */
     .cert-grid {
         gap: 30px;
@@ -2487,12 +2517,19 @@
     opacity: 0.85;
 }
 
+/* 헤더 메뉴 항목 한 줄로 (줄바꿈 방지) */
+.navbar-nav .nav-link {
+    white-space: nowrap;
+    font-size: 16px;       /* 18 → 16 */
+    padding: 8px 12px;     /* 좌우 간격 약간 */
+}
+
 /* 로고 이미지 */
 .brand-logo-img {
-    height: 70px;  /* PC 기본 */
+    height: 60px;
     width: auto;
-    display: block;
-    transition: opacity 0.2s ease;
+    object-fit: contain;
+    max-width: none;
 }
 
 /* 반응형 */
@@ -2505,5 +2542,81 @@
 @media (max-width: 480px) {
     .brand-logo-img {
         height: 32px;
+    }
+}
+
+/* ========================================================================
+   [11] 헤더 로그인 버튼
+   ======================================================================== */
+.nav-login-li {
+    display: flex;
+    flex-direction: column;   /* ⭐ 세로 배치 */
+    align-items: center;
+    gap: 5px;                 /* 버튼 사이 간격 */
+    margin-left: 20px;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.nav-login-name {
+    font-size: 14px;
+    color: var(--text-body);
+    font-weight: 500;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.nav-login-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;   /* 가운데 정렬 */
+    width: 90px;               /* ⭐ 너비 고정 (크기 통일) */
+    height: 34px;              /* ⭐ 높이 고정 */
+    padding: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary) !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    
+    /* 글래스 효과 */
+    background: rgba(30, 58, 95, 0.08);          /* 반투명 배경 */
+    backdrop-filter: blur(8px);                   /* 블러 */
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(30, 58, 95, 0.2);     /* 반투명 테두리 */
+    border-radius: 6px;                           /* 살짝 둥글게 */
+}
+
+.nav-login-btn:hover {
+    background: rgba(30, 58, 95, 0.85);           /* 호버 시 진하게 */
+    color: #fff !important;
+    text-decoration: none;
+    border-color: rgba(30, 58, 95, 0.5);
+}
+
+.navbar-nav.ml-auto {
+    align-items: center;
+}
+
+.nav-admin-btn {
+    background: rgba(30, 58, 95, 0.85) !important;
+    color: #fff !important;
+    border-color: rgba(30, 58, 95, 0.3) !important;
+}
+
+.nav-admin-btn:hover {
+    background: rgba(30, 58, 95, 0.95) !important;
+    color: #fff !important;
+}
+
+@media (max-width: 992px) {
+    .nav-login-li {
+        margin-left: 0;
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid var(--border-light);
     }
 }

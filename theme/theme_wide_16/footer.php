@@ -46,7 +46,17 @@
         
         <!-- 하단: 카피라이트 -->
         <div class="footer-bottom">
-            <p class="copyright">© 2026 (사)율촌·해룡산단협의회. All rights reserved.</p>
+            <span class="footer-copy">© 2026 (사)율촌·해룡산단협의회. All rights reserved.</span>
+            <?php if ($is_member) { ?>
+                <span class="footer-admin-links">
+                    <?php if ($is_admin) { ?><a href="<?php echo G5_ADMIN_URL; ?>" target="_blank">관리자</a><?php } ?>
+                    <a href="<?php echo G5_BBS_URL; ?>/logout.php">로그아웃</a>
+                </span>
+            <?php } else { ?>
+                <span class="footer-admin-links">
+                    <a href="<?php echo G5_BBS_URL; ?>/login.php?url=<?php echo urlencode(G5_URL); ?>">로그인</a>
+                </span>
+            <?php } ?>
         </div>
         
     </div>
