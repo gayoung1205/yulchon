@@ -111,7 +111,12 @@
 }
 
 /* 배너 배경 이미지 (메뉴별로 다르게 지정 가능) */
-.sub-banner.about-bg {
+.sub-banner.about-bg,
+.sub-banner.complex-bg,
+.sub-banner.members-bg,
+.sub-banner.business-bg,
+.sub-banner.location-bg,
+.sub-banner.community-bg {
     background-image: url('/pages/images/sub/yulchon_sub_banner.jpg') !important;
     background-size: cover !important;
     background-position: center center !important;

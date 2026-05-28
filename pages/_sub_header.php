@@ -30,6 +30,10 @@ if (!defined('_GNUBOARD_')) exit;
     
     <?php elseif ($section == 'location'): ?>
         <li><a href="/pages/location.php" class="on">오시는 길</a></li>
+
+    <?php elseif ($section == 'community'): ?>
+        <li><a href="/bbs/board.php?bo_table=notice" class="<?php echo ($current_menu == 'notice') ? 'on' : ''; ?>">공지사항</a></li>
+        <li><a href="/bbs/board.php?bo_table=jobs" class="<?php echo ($current_menu == 'jobs') ? 'on' : ''; ?>">구인공고</a></li>
     <?php endif; ?>
     </ul>
 </div>
