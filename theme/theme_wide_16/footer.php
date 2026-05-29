@@ -24,10 +24,14 @@
             <!-- 우측: 빠른 링크 -->
             <div class="footer-links">
                 <div class="link-group">
-                    <h4>협의회</h4>
+                    <h4>메뉴</h4>
                     <ul>
-                        <li><a href="/pages/about.php">인사말</a></li>
-                        <li><a href="/pages/organization.php">조직도</a></li>
+                        <li><a href="/pages/about.php">협의회소개</a></li>
+                        <li><a href="/pages/complex.php">산업단지</a></li>
+                        <li><a href="/pages/members.php">회원사 소개</a></li>
+                        <li><a href="/pages/business.php">사업 안내</a></li>
+                        <li><a href="/pages/location.php">오시는 길</a></li>
+                        <li><a href="/bbs/board.php?bo_table=notice">커뮤니티</a></li>
                     </ul>
                 </div>
                 

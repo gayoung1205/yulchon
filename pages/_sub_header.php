@@ -34,6 +34,9 @@ if (!defined('_GNUBOARD_')) exit;
     <?php elseif ($section == 'community'): ?>
         <li><a href="/bbs/board.php?bo_table=notice" class="<?php echo ($current_menu == 'notice') ? 'on' : ''; ?>">공지사항</a></li>
         <li><a href="/bbs/board.php?bo_table=jobs" class="<?php echo ($current_menu == 'jobs') ? 'on' : ''; ?>">구인공고</a></li>
+
+    <?php elseif ($section == 'members'): ?>
+        <li><a href="/pages/members.php" class="<?php echo ($current_menu == 'members') ? 'on' : ''; ?>">회원사 현황</a></li>
     <?php endif; ?>
     </ul>
 </div>

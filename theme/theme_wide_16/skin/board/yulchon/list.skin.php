@@ -18,20 +18,37 @@ $current_menu = $current_bo;
 
 // 브레드크럼 + 페이지 타이틀
 if ($current_bo == 'notice') {
+    $title = "커뮤니티";
+    $section = "community";
     $breadcrumb = '> 커뮤니티 > 공지사항';
     $page_title = '공지사항';
     $page_eng = 'NOTICE';
-    $page_desc = '율촌·해룡산단협의회의 공식 소식을 전해드립니다';
 } elseif ($current_bo == 'jobs') {
+    $title = "커뮤니티";
+    $section = "community";
     $breadcrumb = '> 커뮤니티 > 구인공고';
     $page_title = '구인공고';
     $page_eng = 'RECRUITMENT';
-    $page_desc = '율촌·해룡산단 회원사의 채용공고 게시판입니다';
+} elseif ($current_bo == 'officers') {
+    $title = "협의회소개";
+    $section = "about";
+    $current_menu = "organization";
+    $breadcrumb = '> 협의회소개 > 조직구성 및 임원현황';
+    $page_title = '임원진';
+    $page_eng = 'OFFICERS';
+} elseif ($current_bo == 'members') {
+    $title = "회원사 소개";
+    $section = "members";
+    $current_menu = "members";
+    $breadcrumb = '> 회원사 소개 > 회원사 현황';
+    $page_title = '회원사';
+    $page_eng = 'MEMBERS';
 } else {
+    $title = "커뮤니티";
+    $section = "community";
     $breadcrumb = '> 커뮤니티 > ' . $board['bo_subject'];
     $page_title = $board['bo_subject'];
     $page_eng = 'COMMUNITY';
-    $page_desc = '';
 }
 
 // 공통 헤더 불러오기
@@ -79,10 +96,9 @@ include_once(G5_PATH.'/pages/_sub_header.php');
                     </button>
                 </form>
 
-                <!-- 글쓰기 -->
                 <?php if ($write_href): ?>
                 <a href="<?php echo $write_href; ?>" class="yc-write-btn">
-                    <i class="fa fa-pencil"></i> 글쓰기
+                    <i class="fa fa-pencil"></i> <?php echo ($bo_table == 'officers' || $bo_table == 'members') ? '추가하기' : '글쓰기'; ?>
                 </a>
                 <?php endif; ?>
             </div>
@@ -144,7 +160,14 @@ include_once(G5_PATH.'/pages/_sub_header.php');
                                     ?>
                                 </td>
                                 <td class="td-title">
-                                    <a href="<?php echo $list[$i]['href']; ?>" class="yc-title-link">
+                                    <?php
+                                        // officers, members는 view 대신 수정 화면으로 바로 이동
+                                        $item_href = $list[$i]['href'];
+                                        if (($bo_table == 'officers' || $bo_table == 'members') && $is_admin) {
+                                            $item_href = G5_BBS_URL.'/board.php?bo_table='.$bo_table.'&wr_id='.$list[$i]['wr_id'].'&w=u';
+                                        }
+                                        ?>
+                                        <a href="<?php echo $item_href; ?>" class="yc-title-link">
                                         <?php if ($is_category && $list[$i]['ca_name']): ?>
                                             <span class="yc-category"><?php echo $list[$i]['ca_name']; ?></span>
                                         <?php endif; ?>
@@ -189,9 +212,9 @@ include_once(G5_PATH.'/pages/_sub_header.php');
                     <i class="fa fa-trash"></i> 선택삭제
                 </button>
                 <?php endif; ?>
-                <?php if ($write_href): ?>
+                 <?php if ($write_href): ?>
                 <a href="<?php echo $write_href; ?>" class="yc-btn yc-btn-primary">
-                    <i class="fa fa-pencil"></i> 글쓰기
+                    <i class="fa fa-pencil"></i> <?php echo ($bo_table == 'officers' || $bo_table == 'members') ? '추가하기' : '글쓰기'; ?>
                 </a>
                 <?php endif; ?>
             </div>

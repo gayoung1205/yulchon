@@ -2620,3 +2620,824 @@
         border-top: 1px solid var(--border-light);
     }
 }
+
+/* ========================================================================
+   [12] 조직구성 페이지 - 탭 메뉴
+   ======================================================================== */
+.org-tabs {
+    display: flex;
+    gap: 0;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    border-bottom: 2px solid var(--border-light);
+}
+
+.org-tab-btn {
+    flex: 1;
+    padding: 16px 24px;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-mute);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: -2px;
+    letter-spacing: 0.5px;
+}
+
+.org-tab-btn:hover {
+    color: var(--primary);
+}
+
+.org-tab-btn.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+/* 탭 콘텐츠 전환 */
+.org-tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+    padding-bottom: 80px;
+}
+
+.org-tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================================================
+   [13] 이사회 명단 표
+   ======================================================================== */
+.officers-info {
+    max-width: 1100px;
+    margin: 0 auto 20px;
+    text-align: right;
+}
+
+.officers-update {
+    font-size: 13px;
+    color: var(--text-mute);
+    margin: 0;
+}
+
+.officers-table-wrap {
+    max-width: 1100px;
+    margin: 0 auto 100px;
+    overflow-x: auto;
+    border-top: 2px solid var(--primary);
+}
+
+.officers-table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+/* 컬럼 너비 */
+.col-position,
+.col-name,
+.col-company,
+.col-region,
+.col-business {
+    width: 20%;
+}
+
+/* 헤더 */
+.officers-table thead th {
+    padding: 16px 12px;
+    background: var(--bg-light);
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 1px solid var(--border-light);
+    letter-spacing: 0.5px;
+}
+
+/* 셀 */
+.officers-table tbody td {
+    padding: 16px 12px;
+    font-size: 14px;
+    color: var(--text-body);
+    text-align: center;
+    border-bottom: 1px solid #f0f4f8;
+}
+
+.officers-table tbody tr:hover {
+    background: var(--bg-light);
+}
+
+/* 직위 셀 (병합) */
+.officers-table .td-position {
+    vertical-align: middle;
+}
+
+.officers-table .td-name,
+.officers-table .td-company {
+    font-weight: 400;
+    color: var(--text-body);
+}
+
+/* 직위 배지 */
+.position-badge {
+    display: inline-block;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-body);
+    background: transparent;
+    letter-spacing: 0;
+}
+
+/* 직위별 색상 차별화 제거 - 모두 동일 */
+.position-badge.position-회장,
+.position-badge.position-고문,
+.position-badge.position-부회장,
+.position-badge.position-감사,
+.position-badge.position-사무국장 {
+    background: transparent;
+    color: var(--text-body);
+}
+
+/* 빈 상태 */
+.officers-empty {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    text-align: center;
+    color: var(--text-mute);
+    border: 1px dashed var(--border-light);
+}
+
+/* 임원 관리 버튼 (관리자만 보임) */
+.officers-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.officers-admin-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary) !important;
+    background: rgba(30, 58, 95, 0.08);
+    border: 1px solid var(--primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.officers-admin-btn:hover {
+    background: var(--primary);
+    color: #fff !important;
+    text-decoration: none;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .org-tabs {
+        max-width: 100%;
+        margin: 0 16px 30px;
+    }
+    .org-tab-btn {
+        padding: 14px 12px;
+        font-size: 14px;
+    }
+    
+    .officers-table {
+        font-size: 13px;
+    }
+    .officers-table thead th,
+    .officers-table tbody td {
+        padding: 12px 8px;
+        font-size: 12px;
+    }
+    
+    /* 모바일에서 지역/업종 숨김 */
+    .col-region,
+    .col-business,
+    .officers-table thead th:nth-child(4),
+    .officers-table thead th:nth-child(5),
+    .officers-table tbody td.td-region,
+    .officers-table tbody td.td-business {
+        display: none;
+    }
+    
+    .col-position { width: 80px; }
+    .col-name { width: 80px; }
+    
+    .position-badge {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+}
+
+/* ========================================================================
+   [14] 회원사 페이지 - 산단 탭
+   ======================================================================== */
+.members-tabs {
+    display: flex;
+    gap: 0;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    border-bottom: 2px solid var(--border-light);
+}
+
+.members-tab-btn {
+    flex: 1;
+    padding: 16px 24px;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-mute);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: -2px;
+    letter-spacing: 0.5px;
+}
+
+.members-tab-btn:hover {
+    color: var(--primary);
+}
+
+.members-tab-btn.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.tab-count {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 2px 9px;
+    background: var(--bg-light);
+    color: var(--text-mute);
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.members-tab-btn.active .tab-count {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* 탭 콘텐츠 */
+.members-tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+    padding-bottom: 80px;
+}
+
+.members-tab-content.active {
+    display: block;
+}
+
+/* ========================================================================
+   [15] 회원사 구역별 섹션
+   ======================================================================== */
+.members-section {
+    max-width: 1200px;
+    margin: 0 auto 50px;
+}
+
+.section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+.section-count {
+    font-size: 13px;
+    color: var(--text-mute);
+    font-weight: 500;
+}
+
+/* ========================================================================
+   [16] 회원사 표
+   ======================================================================== */
+.members-table-wrap {
+    overflow-x: auto;
+    border-top: 2px solid var(--primary);
+}
+
+.members-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+/* 컬럼 너비 */
+.members-table .col-no       { width: 5%; }
+.members-table .col-company  { width: 22%; }
+.members-table .col-ceo      { width: 10%; }
+.members-table .col-address  { width: 30%; }
+.members-table .col-business { width: 18%; }
+.members-table .col-tel      { width: 15%; }
+
+/* 헤더 */
+.members-table thead th {
+    padding: 14px 12px;
+    background: var(--bg-light);
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 1px solid var(--border-light);
+    letter-spacing: 0.5px;
+}
+
+/* 셀 */
+.members-table tbody td {
+    padding: 14px 12px;
+    font-size: 14px;
+    color: var(--text-body);
+    text-align: center;
+    border-bottom: 1px solid #f0f4f8;
+    word-break: keep-all;
+    vertical-align: middle;
+}
+
+.members-table tbody tr:hover {
+    background: var(--bg-light);
+}
+
+/* 셀별 스타일 (모두 가운데 정렬) */
+.members-table .td-no {
+    color: var(--text-mute);
+    font-size: 13px;
+}
+.members-table .td-address {
+    font-size: 13px;
+}
+.members-table .td-business {
+    font-size: 13px;
+    color: var(--text-mute);
+}
+.members-table .td-tel {
+    font-size: 13px;
+    color: var(--text-body);
+}
+
+/* 빈 상태 */
+.members-empty {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 80px 20px;
+    text-align: center;
+    color: var(--text-mute);
+    border: 1px dashed var(--border-light);
+}
+
+/* ========================================================================
+   [17] 회원사 관리자 버튼
+   ======================================================================== */
+.members-admin-area {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    text-align: right;
+    padding: 0 20px;
+}
+
+.members-admin-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary) !important;
+    background: rgba(30, 58, 95, 0.08);
+    border: 1px solid var(--primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.members-admin-btn:hover {
+    background: var(--primary);
+    color: #fff !important;
+    text-decoration: none;
+}
+
+/* ========================================================================
+   [18] 회원사 페이지 반응형
+   ======================================================================== */
+@media (max-width: 768px) {
+    .members-tabs {
+        max-width: 100%;
+        margin: 0 16px 30px;
+    }
+    .members-tab-btn {
+        padding: 14px 12px;
+        font-size: 14px;
+    }
+    
+    .members-section {
+        margin: 0 16px 40px;
+    }
+    
+    .section-title {
+        font-size: 17px;
+    }
+    
+    .members-table {
+        font-size: 12px;
+    }
+    .members-table thead th,
+    .members-table tbody td {
+        padding: 10px 6px;
+        font-size: 12px;
+    }
+    
+    /* 모바일에서 주소/종목 숨김 */
+    .members-table .col-address,
+    .members-table .col-business,
+    .members-table thead th:nth-child(4),
+    .members-table thead th:nth-child(5),
+    .members-table tbody td.td-address,
+    .members-table tbody td.td-business {
+        display: none;
+    }
+}
+
+/* ========================================================================
+   [19] 산업단지 페이지 - 탭 메뉴
+   ======================================================================== */
+.complex-tabs {
+    display: flex;
+    gap: 0;
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    border-bottom: 2px solid var(--border-light);
+    flex-wrap: wrap;
+}
+
+.complex-tab-btn {
+    flex: 1;
+    min-width: 200px;
+    padding: 18px 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-mute);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: -2px;
+    letter-spacing: 0.3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.complex-tab-btn:hover {
+    color: var(--primary);
+    background: rgba(30, 58, 95, 0.03);
+}
+
+.complex-tab-btn.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+/* 탭 콘텐츠 */
+.complex-tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+    padding-bottom: 80px;
+}
+
+.complex-tab-content.active {
+    display: block;
+}
+
+/* ========================================================================
+   [20] 산업단지 정보 카드
+   ======================================================================== */
+.complex-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.complex-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.complex-eng {
+    display: block;
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.complex-name {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+/* 정보 카드 그리드 */
+.complex-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.info-card {
+    padding: 24px 20px;
+    background: var(--bg-light);
+    border-left: 3px solid var(--primary);
+    transition: all 0.3s;
+}
+
+.info-card:hover {
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.info-label {
+    font-size: 13px;
+    color: var(--text-mute);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.info-value {
+    font-size: 15px;
+    color: var(--text-dark);
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* 상세 정보 블록 */
+.complex-detail {
+    padding: 20px 24px;
+    background: #fff;
+    border: 1px solid var(--border-light);
+    margin-bottom: 16px;
+}
+
+.detail-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.detail-value {
+    font-size: 14px;
+    color: var(--text-body);
+    line-height: 1.7;
+}
+
+.detail-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.detail-list li {
+    padding: 6px 0;
+    font-size: 14px;
+    color: var(--text-body);
+    line-height: 1.6;
+    border-bottom: 1px dashed var(--border-light);
+}
+
+.detail-list li:last-child {
+    border-bottom: none;
+}
+
+.detail-list li::before {
+    content: '▸';
+    color: var(--primary);
+    margin-right: 8px;
+    font-weight: 700;
+}
+
+/* 공공기관 태그 */
+.public-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.public-tag {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--bg-light);
+    color: var(--text-body);
+    font-size: 13px;
+    border-radius: 20px;
+    border: 1px solid var(--border-light);
+}
+
+/* ========================================================================
+   [21] 산업단지 배치도
+   ======================================================================== */
+.complex-layout {
+    margin-top: 40px;
+}
+
+.layout-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.layout-title h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0;
+}
+
+.layout-zoom-hint {
+    font-size: 12px;
+    color: var(--text-mute);
+}
+
+.layout-image-wrap {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--border-light);
+    cursor: zoom-in;
+    transition: all 0.3s;
+}
+
+.layout-image-wrap:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.layout-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.layout-image-wrap:hover .layout-image {
+    transform: scale(1.02);
+}
+
+.layout-zoom-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 8px 12px;
+    background: rgba(30, 58, 95, 0.85);
+    color: #fff;
+    font-size: 14px;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.layout-image-wrap:hover .layout-zoom-icon {
+    opacity: 1;
+}
+
+/* ========================================================================
+   [22] 배치도 확대 모달
+   ======================================================================== */
+.layout-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.layout-modal.active {
+    display: flex;
+    animation: fadeIn 0.2s;
+}
+
+.layout-modal-content {
+    position: relative;
+    max-width: 95%;
+    max-height: 95%;
+    background: #fff;
+    padding: 24px;
+    overflow: auto;
+}
+
+.layout-modal-title {
+    font-size: 18px;
+    color: var(--primary);
+    margin: 0 0 16px;
+    text-align: center;
+    padding-right: 40px;
+}
+
+.layout-modal-image {
+    max-width: 100%;
+    max-height: 80vh;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.layout-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    background: var(--bg-light);
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    color: var(--text-body);
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 1;
+}
+
+.layout-modal-close:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* ========================================================================
+   [23] 산업단지 페이지 반응형
+   ======================================================================== */
+@media (max-width: 768px) {
+    .complex-tabs {
+        margin: 0 16px 30px;
+    }
+    .complex-tab-btn {
+        min-width: 140px;
+        padding: 14px 10px;
+        font-size: 13px;
+    }
+    
+    .complex-wrap {
+        padding: 0 16px;
+    }
+    
+    .complex-name {
+        font-size: 24px;
+    }
+    
+    .complex-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .complex-detail {
+        padding: 16px 18px;
+    }
+    
+    .layout-zoom-hint {
+        display: none;
+    }
+}

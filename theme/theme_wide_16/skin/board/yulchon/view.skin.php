@@ -1,24 +1,51 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
+if ($bo_table == 'officers') {
+    goto_url(G5_URL.'/pages/organization.php#tab-officers');
+    exit;
+}
+if ($bo_table == 'members') {
+    goto_url(G5_URL.'/pages/members.php');
+    exit;
+}
+
 // 게시판 스킨 CSS 로드
 add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0);
 
 // 율촌 공통 헤더용 변수 설정
-$title = "커뮤니티";
-$section = "community";
 $current_bo = $bo_table;
 $current_menu = $current_bo;
 
 if ($current_bo == 'notice') {
+    $title = "커뮤니티";
+    $section = "community";
     $breadcrumb = '> 커뮤니티 > 공지사항';
     $page_title = '공지사항';
     $page_eng = 'NOTICE';
 } elseif ($current_bo == 'jobs') {
+    $title = "커뮤니티";
+    $section = "community";
     $breadcrumb = '> 커뮤니티 > 구인공고';
     $page_title = '구인공고';
     $page_eng = 'RECRUITMENT';
+} elseif ($current_bo == 'officers') {
+    $title = "협의회소개";
+    $section = "about";
+    $current_menu = "organization";
+    $breadcrumb = '> 협의회소개 > 조직구성 및 임원현황';
+    $page_title = '임원진';
+    $page_eng = 'OFFICERS';
+} elseif ($current_bo == 'members') {
+    $title = "회원사 소개";
+    $section = "members";
+    $current_menu = "members";
+    $breadcrumb = '> 회원사 소개 > 회원사 현황';
+    $page_title = '회원사';
+    $page_eng = 'MEMBERS';
 } else {
+    $title = "커뮤니티";
+    $section = "community";
     $breadcrumb = '> 커뮤니티 > ' . $board['bo_subject'];
     $page_title = $board['bo_subject'];
     $page_eng = 'COMMUNITY';
@@ -111,8 +138,13 @@ include_once(G5_PATH.'/pages/_sub_header.php');
 
         <!-- 글 하단 버튼 -->
         <div class="yc-view-btns">
-            <a href="<?php echo $list_href; ?>" class="yc-btn yc-btn-list">
-                <i class="fa fa-list"></i> 목록
+            <?php 
+            // officers 게시판은 조직구성 페이지로, 나머지는 게시판 목록으로
+            $back_url = ($bo_table == 'officers') ? G5_URL.'/pages/organization.php#tab-officers' : $list_href;
+            $back_label = ($bo_table == 'officers') ? '조직구성으로' : '목록';
+            ?>
+            <a href="<?php echo $back_url; ?>" class="yc-btn yc-btn-list">
+                <i class="fa fa-list"></i> <?php echo $back_label; ?>
             </a>
             <div class="yc-view-btns-right">
                 <?php if ($update_href) { ?>
